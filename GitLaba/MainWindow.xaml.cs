@@ -17,6 +17,7 @@ namespace GitLaba
     public partial class MainWindow : Window
     {
         Triangle tr;
+        Rectangle rec;
         Random rnd = new Random();
         public MainWindow()
         {
@@ -26,9 +27,17 @@ namespace GitLaba
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             tr = new Triangle(p1, p2, p3);
-            DrawTriangle(tr); 
+            DrawTriangle(tr);
+            //Создание четырёхугольника со случайными координатами
+            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p5 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p6 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p7 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            rec = new Rectangle(p4, p5, p6,p7);
+            DrawTriangle(tr);
+            DrawRectangle(rec);
         }
-        public void DrawLine(Point2D p1, Point2D p2)
+        public void DrawLinetr(Point2D p1, Point2D p2)
         {
             //Создание новой линии
             Line line = new Line();
@@ -43,17 +52,57 @@ namespace GitLaba
             //Добавление линии в Canvas
             Scene.Children.Add(line);
         }
+        public void DrawLinerec(Point2D p1, Point2D p2)
+        {
+            //Создание новой линии
+            Line line = new Line();
+            //Цвет и толщина линии
+            line.Stroke = Brushes.Black;
+            line.StrokeThickness = 3;
+            //Установка координат линии из координат точек Point2D
+            line.X1 = p1.X;
+            line.Y1 = p1.Y;
+            line.X2 = p2.X;
+            line.Y2 = p2.Y;
+            //Добавление линии в Canvas
+            Scene.Children.Add(line);
+        }
         public void DrawTriangle(Triangle tr)
         {
             //Отрисовка треугольника с помощью функции отрисовки линии
-            DrawLine(tr.P1, tr.P2);
-            DrawLine(tr.P2, tr.P3);
-            DrawLine(tr.P3, tr.P1);
+            DrawLinetr(tr.P1, tr.P2);
+            DrawLinetr(tr.P2, tr.P3);
+            DrawLinetr(tr.P3, tr.P1);
+        }
+        public void DrawRectangle(Rectangle rec)
+        {
+            //Отрисовка четырёхугольника с помощью функции отрисовки линии
+            DrawLinerec(rec.P1, rec.P2);
+            DrawLinerec(rec.P2, rec.P3);
+            DrawLinerec(rec.P3, rec.P4);
+            DrawLinerec(rec.P4, rec.P1);
         }
         private void Clear(object sender, RoutedEventArgs e)
         {
             //Очистка Canvas от всех объектов
             Scene.Children.Clear();
+        }
+
+        private void Redraw(object sender, RoutedEventArgs e)
+        {
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            tr = new Triangle(p1, p2, p3);
+            DrawTriangle(tr);
+            
+            Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p5 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p6 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p7 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            rec = new Rectangle(p4, p5, p6, p7);
+            DrawTriangle(tr);
+            DrawRectangle(rec);
         }
     }
 }
