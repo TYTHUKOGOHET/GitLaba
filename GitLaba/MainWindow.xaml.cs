@@ -16,6 +16,16 @@ namespace GitLaba
     /// </summary>
     public partial class MainWindow : Window
     {
+        Triangle tr;
+        Random rnd = new Random();
+        public MainWindow()
+        {
+            //Создание треугольника со случайными координатами
+            Point2D p1 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            tr = new Triangle(p1, p2, p3);
+        }
         public void DrawLine(Point2D p1, Point2D p2)
         {
             //Создание новой линии
@@ -31,10 +41,18 @@ namespace GitLaba
             //Добавление линии в Canvas
             Scene.Children.Add(line);
         }
-
-        public MainWindow()
+        public void DrawTriangle(Triangle tr)
         {
-            InitializeComponent();
+            //Отрисовка треугольника с помощью функции отрисовки линии
+            DrawLine(tr.P1, tr.P2);
+            DrawLine(tr.P2, tr.P3);
+            DrawLine(tr.P3, tr.P1);
         }
+        public void ClearScene()
+        {
+            //Очистка Canvas от всех объектов
+            Scene.Children.Clear();
+        }
+
     }
 }
