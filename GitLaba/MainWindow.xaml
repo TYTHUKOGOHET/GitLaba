@@ -42,7 +42,7 @@ VerticalAlignment="Top" Width="670"/>
         <TextBox x:Name="squP3Y" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,200,70,0" Grid.Column="1"/>
         <TextBox x:Name="squP4X" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,230,120,0" Grid.Column="1"/>
         <TextBox x:Name="squP4Y" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,230,70,0" Grid.Column="1"/>
-        <Button Content="Нарисовать" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,270,120,0" Grid.Column="1" Click="Button_Click"/>
+        <Button Content="Нарисовать" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,270,120,0" Grid.Column="1" Click="Draw"/>
 
         <TextBlock Text="Перемещение по координатам" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,300,80,0" Grid.Column="1"/>
         <TextBlock Text="X             Y" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,330,220,0" Grid.Column="1"/>
@@ -51,5 +51,7 @@ VerticalAlignment="Top" Width="670"/>
         <TextBlock Text="X             Y" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,330,90,0" Grid.Column="1"/>
         <TextBox x:Name="squMoveX" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,350,120,0" Grid.Column="1"/>
         <TextBox x:Name="squMoveY" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,350,70,0" Grid.Column="1"/>
+        <Button Content="переместить" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,400,200,0" Grid.Column="1" Click="trMove"/>
+        <Button Content="переместить" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,400,60,0" Grid.Column="1"/>
     </Grid>
 </Window>

@@ -117,7 +117,7 @@ namespace GitLaba
             DrawRectangle(rec);
             DrawRectangle(squ);
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Draw(object sender, RoutedEventArgs e)
         {
             Point2D p1 = new Point2D(Convert.ToInt32(trP1X.Text), Convert.ToInt32(trP1Y.Text));
             Point2D p2 = new Point2D(Convert.ToInt32(trP2X.Text), Convert.ToInt32(trP2Y.Text));
@@ -132,6 +132,13 @@ namespace GitLaba
             DrawTriangle(tr);
             DrawRectangle(squ);
 
+        }
+        private void trMove(object sender, RoutedEventArgs e)
+        {
+            tr.AddX(Convert.ToInt32(trMoveX.Text));
+            tr.AddY(Convert.ToInt32(trMoveY.Text));
+            Scene.Children.Clear();
+            DrawTriangle(tr);
         }
     }
 }
