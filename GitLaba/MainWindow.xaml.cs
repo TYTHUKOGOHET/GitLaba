@@ -101,7 +101,6 @@ namespace GitLaba
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             tr = new Triangle(p1, p2, p3);
-            DrawTriangle(tr);
 
             Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p5 = new Point2D(p4.X, rnd.Next(0, (int)Scene.Height));
@@ -118,6 +117,21 @@ namespace GitLaba
             DrawRectangle(rec);
             DrawRectangle(squ);
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Point2D p1 = new Point2D(Convert.ToInt32(trP1X.Text), Convert.ToInt32(trP1Y.Text));
+            Point2D p2 = new Point2D(Convert.ToInt32(trP2X.Text), Convert.ToInt32(trP2Y.Text));
+            Point2D p3 = new Point2D(Convert.ToInt32(trP3X.Text), Convert.ToInt32(trP3Y.Text));
+            tr = new Triangle(p1, p2, p3);
 
+            Point2D p4 = new Point2D(Convert.ToInt32(squP1X.Text), Convert.ToInt32(squP1Y.Text));
+            Point2D p5 = new Point2D(Convert.ToInt32(squP2X.Text), Convert.ToInt32(squP2Y.Text));
+            Point2D p6 = new Point2D(Convert.ToInt32(squP3X.Text), Convert.ToInt32(squP3Y.Text));
+            Point2D p7 = new Point2D(Convert.ToInt32(squP4X.Text), Convert.ToInt32(squP4Y.Text));
+            squ = new Rectangle(p4, p5, p6, p7);
+            DrawTriangle(tr);
+            DrawRectangle(squ);
+
+        }
     }
 }
