@@ -18,6 +18,7 @@ namespace GitLaba
     {
         Triangle tr;
         Rectangle rec;
+        Rectangle squ;
         Random rnd = new Random();
         public MainWindow()
         {
@@ -27,15 +28,21 @@ namespace GitLaba
             Point2D p2 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             Point2D p3 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
             tr = new Triangle(p1, p2, p3);
-            DrawTriangle(tr);
-            //Создание четырёхугольника со случайными координатами
+            //Создание прямоугольника со случайными координатами
             Point2D p4 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
-            Point2D p5 = new Point2D(p4.X, rnd.Next(0, (int)Scene.Height));
-            Point2D p6 = new Point2D(rnd.Next(0, (int)Scene.Width), p4.Y);
+            Point2D p5 = new Point2D(p4.X, rnd.Next(0, (int)Scene.Height-p4.Y));
+            Point2D p6 = new Point2D(rnd.Next(0, (int)Scene.Width - p4.X), p4.Y);
             Point2D p7 = new Point2D(p6.X, p5.Y);
             rec = new Rectangle(p4, p5, p6,p7);
+            //Создание квадрата со случайными координатами
+            Point2D p8 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p9 = new Point2D(p8.X, p8.Y+rnd.Next(0, (int)Scene.Height - p8.Y));
+            Point2D p10 = new Point2D(p8.X+p9.Y-p8.Y, p8.Y);
+            Point2D p11 = new Point2D(p10.X, p9.Y);
+            squ = new Rectangle(p8, p9, p10, p11);
             DrawTriangle(tr);
             DrawRectangle(rec);
+            DrawRectangle(squ);
         }
         public void DrawLinetr(Point2D p1, Point2D p2)
         {
@@ -101,8 +108,15 @@ namespace GitLaba
             Point2D p6 = new Point2D(rnd.Next(0, (int)Scene.Width), p4.Y);
             Point2D p7 = new Point2D(p6.X, p5.Y);
             rec = new Rectangle(p4, p5, p6, p7);
+
+            Point2D p8 = new Point2D(rnd.Next(0, (int)Scene.Width), rnd.Next(0, (int)Scene.Height));
+            Point2D p9 = new Point2D(p8.X, p8.Y + rnd.Next(0, (int)Scene.Height - p8.Y));
+            Point2D p10 = new Point2D(p8.X + p9.Y - p8.Y, p8.Y);
+            Point2D p11 = new Point2D(p10.X, p9.Y);
+            squ = new Rectangle(p8, p9, p10, p11);
             DrawTriangle(tr);
             DrawRectangle(rec);
+            DrawRectangle(squ);
         }
     }
 }
