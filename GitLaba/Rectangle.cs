@@ -17,5 +17,19 @@ namespace GitLaba
             P3 = p3;
             P4 = p4;
         }
+        public void AddX(int x)
+        {
+            P1.AddX(x);
+            P2.AddX(x);
+            P3.AddX(x);
+            P4.AddX(x);
+        }
+        public void AddY(int y)
+        {
+            P1.AddY(y);
+            P2.AddY(y);
+            P3.AddY(y);
+            P4.AddY(y);
+        }
     }
 }

@@ -117,28 +117,38 @@ namespace GitLaba
             DrawRectangle(rec);
             DrawRectangle(squ);
         }
-        private void Draw(object sender, RoutedEventArgs e)
+        private void trDraw(object sender, RoutedEventArgs e)
         {
             Point2D p1 = new Point2D(Convert.ToInt32(trP1X.Text), Convert.ToInt32(trP1Y.Text));
             Point2D p2 = new Point2D(Convert.ToInt32(trP2X.Text), Convert.ToInt32(trP2Y.Text));
             Point2D p3 = new Point2D(Convert.ToInt32(trP3X.Text), Convert.ToInt32(trP3Y.Text));
             tr = new Triangle(p1, p2, p3);
-
+            DrawTriangle(tr);
+        }
+        private void squDraw(object sender, RoutedEventArgs e)
+        {
             Point2D p4 = new Point2D(Convert.ToInt32(squP1X.Text), Convert.ToInt32(squP1Y.Text));
             Point2D p5 = new Point2D(Convert.ToInt32(squP2X.Text), Convert.ToInt32(squP2Y.Text));
             Point2D p6 = new Point2D(Convert.ToInt32(squP3X.Text), Convert.ToInt32(squP3Y.Text));
             Point2D p7 = new Point2D(Convert.ToInt32(squP4X.Text), Convert.ToInt32(squP4Y.Text));
             squ = new Rectangle(p4, p5, p6, p7);
-            DrawTriangle(tr);
             DrawRectangle(squ);
-
         }
+
         private void trMove(object sender, RoutedEventArgs e)
         {
             tr.AddX(Convert.ToInt32(trMoveX.Text));
             tr.AddY(Convert.ToInt32(trMoveY.Text));
             Scene.Children.Clear();
             DrawTriangle(tr);
+        }
+
+        private void squMove(object sender, RoutedEventArgs e)
+        {
+            squ.AddX(Convert.ToInt32(squMoveX.Text));
+            squ.AddY(Convert.ToInt32(squMoveY.Text));
+            Scene.Children.Clear();
+            DrawRectangle(squ);
         }
     }
 }
