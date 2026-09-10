@@ -118,5 +118,6 @@ namespace GitLaba
             DrawRectangle(rec);
             DrawRectangle(squ);
         }
+
     }
 }

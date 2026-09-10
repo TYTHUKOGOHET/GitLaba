@@ -5,12 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GitLaba"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1000">
     <Grid>
         <Canvas x:Name="Scene" HorizontalAlignment="Left" Height="400" Margin="15,0,0,15"
 VerticalAlignment="Center" Width="670"/>
         <Button Content="Clear Screen" Click="Clear" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15"/>
         <Button Content="Redraw" Click="Redraw" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="15,50"/>
         
+        <TextBlock Text="Треугольник" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="215,90"/>
+        <TextBlock Text="X             Y" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="220,110"/>
+        <TextBlock Text="P1" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="295,140"/>
+        <TextBlock Text="P2" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="295,170"/>
+        <TextBlock Text="P3" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="295,200"/>
+        <TextBox x:Name="trP1X" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="250,140"/>
+        <TextBox x:Name="trP1Y" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="200,140"/>
+        <TextBox x:Name="trP2X" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="250,170"/>
+        <TextBox x:Name="trP2Y" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="200,170"/>
+        <TextBox x:Name="trP3X" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="250,200"/>
+        <TextBox x:Name="trP3Y" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="200,200"/>
+
+        <TextBlock Text="Квадрат" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="100,90"/>
+        <TextBlock Text="X             Y" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="90,110"/>
+        <TextBlock Text="P1" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="165,140"/>
+        <TextBlock Text="P2" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="165,170"/>
+        <TextBlock Text="P3" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="165,200"/>
+        <TextBlock Text="P4" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="165,230"/>
+        <TextBox x:Name="squP1X" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="120,140"/>
+        <TextBox x:Name="squP1Y" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="70,140"/>
+        <TextBox x:Name="squP2X" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="120,170"/>
+        <TextBox x:Name="squP2Y" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="70,170"/>
+        <TextBox x:Name="squP3X" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="120,200"/>
+        <TextBox x:Name="squP3Y" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="70,200"/>
+        <TextBox x:Name="squP4X" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="120,230"/>
+        <TextBox x:Name="squP4Y" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="70,230"/>
     </Grid>
 </Window>
