@@ -23,7 +23,7 @@ namespace GitLaba
         }
         public void AddY(int y)
         {
-            Y += y;
+            Y -= y;
         }
     }
 }
