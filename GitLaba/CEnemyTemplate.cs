@@ -48,6 +48,30 @@ namespace GitLaba
                 string jsonString = JsonSerializer.Serialize(enemy);
                 // Сохранение JSON в файл
                 File.WriteAllText("enemy.json", jsonString);
+
+
+
+                // Чтение JSON из файла
+                string jsonFromFile = File.ReadAllText("people.json");
+                List<CEnemyTemplate> people = new List<CEnemyTemplate>();
+                // Парсинг JSON
+                JsonDocument doc = JsonDocument.Parse(jsonFromFile);
+                //Добавление новой записи в список класса из json
+                foreach (JsonElement element in doc.RootElement.EnumerateArray())
+                {
+                    string name = element.GetProperty("Name").GetString();
+                    string iconName = element.GetProperty("IconName").GetString();
+                    int baseLife = element.GetProperty("BaseLife").GetInt32();
+                    double lifeModifier = element.GetProperty("LifeModifier").GetDouble();
+                    int baseGold = element.GetProperty("BaseGold").GetInt32();
+                    double goldModifier = element.GetProperty("GoldModifier").GetDouble();
+                    double spawnChance = element.GetProperty("SpawnChance").GetDouble();
+                    // Создание нового экземпляра класса CEnemyTemplate с помощью конструктора
+                    CEnemyTemplate person = new CEnemyTemplate(name, iconName, baseLife, lifeModifier, baseGold, goldModifier, spawnChance);
+                    // Добавление объекта в список
+                    people.Add(person);
+                }
+
             }
         }
     }
